@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", sans-serif;
+      }
+      svg {
+        margin: 0 auto;
+        display:  table;
+      }
+      .area {
+        fill:  #ef0101;
+        fill-opacity:  .5;
+      }
+      .tick circle {
+        fill: none;
+        stroke:  #888;
+      }
+      .tick line {
+        stroke: #888;
+      }
+      .tick text {
+        font-size: 20px;
+        text-anchor: middle;
+      }
+    </style>      
+  </head>
+  <body bgcolor = "white" style="text-align: center; max-width: 100%; margin-top: 50; color: #505050;">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://unpkg.com/geometric@2.0.1/build/geometric.min.js"></script>
+	  <script src="viz.js"></script>
+    <link rel="stylesheet" href="general.css" />
+
+
+    <div class="container header">
+      <center>
+          <h1>California <span id="fire">Fire</span> Season. </h1>
+          <h2>Cumulative Acres burned per year in California between 2010 and 2021</h2>
+      </center>
+  </div>
+  <div class="container">
+    <svg height="1000" width="1200" class="courseViz"></svg>
+  </div>
+
+    <script>
+		const requestData = async () => {
+			Promise.all([
+				d3.json("fire.json")
+			]).then(function(files) {
+				drawRadialChart(".courseViz", files[0])
+			})
+		}
+		requestData();
+ 
+    </script>
+  </body>

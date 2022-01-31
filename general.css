@@ -1,0 +1,20 @@
+
+
+html, body {
+  font-size: 16px;
+  color: #F1FAEE;
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  align-content: center;
+}
+
+#fire {
+  text-decoration: underline;
+  text-decoration-color: #D8315B;
+  line-height: 1.4rem;
+  text-decoration-thickness: 15%;
+}
